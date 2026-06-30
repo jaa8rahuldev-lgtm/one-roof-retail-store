@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Roof Admin Panel</title>
+<div class="dashboard">
+
+<div class="card">
+<h2 id="total-products">0</h2>
+<p>Total Products</p>
+</div>
+
+<div class="card">
+<h2 id="total-orders">0</h2>
+<p>Total Orders</p>
+</div>
+
+<div class="card">
+<h2 id="pending-orders">0</h2>
+<p>Pending</p>
+</div>
+
+<div class="card">
+<h2 id="delivered-orders">0</h2>
+<p>Delivered</p>
+</div>
+
+</div>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1 style="text-align:center;">One Roof Admin Panel</h1>
+
+<input type="text" id="name" placeholder="Product Name">
+
+<input type="number" id="price" placeholder="Price">
+<select id="category">
+
+<option value="Grocery">Grocery</option>
+
+<option value="Cosmetics">Cosmetics</option>
+
+<option value="Stationery">Stationery</option>
+
+<option value="Toys">Toys</option>
+
+<option value="Gift">Gift Items</option>
+
+<option value="Personal Care">Personal Care</option>
+<input type="number" id="stock" placeholder="Stock Quantity">
+
+</select>
+
+<input type="file" id="image" accept="image/*">
+
+<button onclick="addProduct()">Add Product</button>
+<h2>Orders</h2>
+
+<div id="orders-list"></div>
+<div id="list"></div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

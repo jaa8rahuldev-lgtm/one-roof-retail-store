@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Orders</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h2 style="text-align:center;">My Orders</h2>
+
+<div id="orders-list"></div>
+
+<script src="script.js"></script>
+
+<script>
+
+let orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+let html = "";
+
+orders.forEach(order=>{
+
+html += `
+<div class="product">
+<h3>Order #${order.id}</h3>
+<p>${order.date}</p>
+<p>Status: ${order.status}</p>
+</div>
+`;
+
+});
+
+document.getElementById("orders-list").innerHTML = html;
+
+</script>
+
+</body>
+</html>

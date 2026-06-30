@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Wishlist</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1 style="text-align:center;">❤️ My Wishlist</h1>
+
+<div id="wishlist"></div>
+
+<script>
+
+let items=JSON.parse(localStorage.getItem("wishlist"))||[];
+
+let html="";
+
+items.forEach(item=>{
+
+html+=`
+
+<div class="product">
+
+<h3>${item.name}</h3>
+
+<p>₹${item.price}</p>
+
+</div>
+
+`;
+
+});
+
+document.getElementById("wishlist").innerHTML=html;
+
+</script>
+
+</body>
+
+</html>

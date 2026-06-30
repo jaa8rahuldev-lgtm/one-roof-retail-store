@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>My Profile</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1 style="text-align:center;">My Account</h1>
+
+<div style="text-align:center; padding:30px;">
+
+<h2 id="username"></h2>
+
+<p id="email"></p>
+
+<button onclick="logout()">Logout</button>
+
+</div>
+
+<script>
+
+let user=JSON.parse(localStorage.getItem("user"));
+
+if(user){
+
+document.getElementById("username").innerHTML=user.name;
+
+document.getElementById("email").innerHTML=user.email;
+
+}
+
+function logout(){
+
+localStorage.removeItem("user");
+
+alert("Logged Out");
+
+window.location.href="login.html";
+
+}
+
+</script>
+
+</body>
+
+</html>

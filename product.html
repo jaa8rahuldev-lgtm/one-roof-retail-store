@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Details</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="product-details">
+
+<img src="https://via.placeholder.com/350" id="product-image">
+
+<h2 id="product-name">Product Name</h2>
+
+<h3>₹<span id="product-price">0</span></h3>
+<div style="margin:15px 0;">
+
+<button onclick="minusQty()">-</button>
+
+<span id="qty" style="padding:10px;">1</span>
+
+<button onclick="plusQty()">+</button>
+
+</div>
+
+<button onclick="buyNow()" style="background:#0b5d2a;color:white;">
+⚡ Buy Now
+</button>
+
+<p>
+High Quality Product with Fast Delivery.
+100% Original Product.
+</p>
+
+<button onclick="addToCart('Sample Product',299)">
+Add To Cart
+</button>
+
+<button style="background:#0b5d2a;color:white;">
+Buy Now
+</button>
+<h3>⭐⭐⭐⭐⭐ 4.8 (245 Reviews)</h3>
+<p style="color:green;font-weight:bold;">
+✅ In Stock
+</p>
+<p>
+🚚 Free Delivery in 2-3 Days
+</p>
+<h2>
+
+₹299
+
+<del style="color:gray;">
+₹499
+</del>
+
+<span style="color:red;">
+40% OFF
+</span>
+<button onclick="addWishlist()">
+
+❤️ Add To Wishlist
+
+</button>
+
+</h2>
+</div>
+
+<script src="script.js"></script>
+
+<script>
+
+let product=JSON.parse(localStorage.getItem("selectedProduct"));
+
+if(product){
+
+document.getElementById("product-name").innerHTML=product.name;
+
+document.getElementById("product-price").innerHTML="₹"+product.price;
+
+document.getElementById("product-image").src=product.image;
+
+}
+
+</script></body>
+</html>

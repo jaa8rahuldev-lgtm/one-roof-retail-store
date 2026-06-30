@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Roof Retail Store</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="top-bar">
+    <span>📍 Khandoli, Agra, Uttar Pradesh</span>
+    <span>🚚 Free Delivery on orders above ₹499</span>
+    <span>📞 7465868068</span>
+    <span>✉ marketing@oneroofretailstore.com</span>
+</div>
+<header class="header">
+
+<div class="logo">
+<h1>ONE ROOF</h1>
+<p>Retail Store</p>
+</div>
+
+<div class="search-box">
+<input type="text" id="search"
+placeholder="Search Products..."
+onkeyup="searchProducts()">
+
+<button>🔍</button>
+</div>
+
+<div class="header-right">
+
+<a href="profile.html">👤 My Account</a>
+
+<div class="cart" onclick="location.href='cart.html'">
+🛒 <span id="cart-count">0</span>
+</div>
+
+</div>
+
+</header>
+<nav class="mobile-nav">
+<a href="#">Home</a>
+<a href="#">Shop</a>
+<a href="#">Categories</a>
+<a href="#">Offers</a>
+<a href="#">Contact</a>
+</nav>
+
+<section class="slider">
+
+<img id="slide"
+src="banner1.jpg">
+
+</section>
+
+<div class="hero-content">
+
+<h1>Everything You Need,<br>Under One Roof</h1>
+
+<p>Groceries • Cosmetics • Toys • Gift Items • Personal Care • Stationery</p>
+
+<button>Shop Now</button>
+
+</div>
+<section class="products-section">
+
+<h2>Latest Products</h2>
+
+<div id="dynamic-products" class="products-grid">
+
+</div>
+
+</section>
+<h2>Shop By Category</h2>
+
+<div class="categories">
+
+<button onclick="filterCategory('All')">All</button>
+
+<button onclick="filterCategory('Grocery')">Grocery</button>
+
+<button onclick="filterCategory('Cosmetics')">Cosmetics</button>
+
+<button onclick="filterCategory('Stationery')">Stationery</button>
+
+<button onclick="filterCategory('Toys')">Toys</button>
+
+<button onclick="filterCategory('Gift')">Gift</button>
+
+</div>
+</section>
+<a href="https://wa.me/917465868068?text=Hello%20One%20Roof%20Retail%20Store"
+class="whatsapp-btn"
+target="_blank">
+
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="55">
+
+</a>
+
+<script src="script.js"></script>
+<nav class="bottom-nav">
+
+<a href="index.html">🏠<br>Home</a>
+
+<a href="#">📂<br>Category</a>
+
+<a href="cart.html">🛒<br>Cart</a>
+
+<a href="profile.html">👤<br>Account</a>
+
+</nav>
+</html>
+<section class="categories">
+
+<h2>Shop By Categories</h2>
+
+<div class="category-grid">
+
+<div class="card">🛒<br>Groceries</div>
+
+<div class="card">💄<br>Cosmetics</div>
+
+<div class="card">🧸<br>Toys</div>
+
+<div class="card">🎁<br>Gift Items</div>
+
+<div class="card">🧴<br>Personal Care</div>
+
+<div class="card">📚<br>Stationery</div>
+
+</div>
+
+</section>
+<div id="dynamic-products" class="product-grid">
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script>
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCRxqTlZa5XiZQa2pQ7-YB14Oan1xdbGDg",
+  authDomain: "one-roof-retail-store.firebaseapp.com",
+  projectId: "one-roof-retail-store",
+  storageBucket: "one-roof-retail-store.firebasestorage.app",
+  messagingSenderId: "468022157295",
+  appId: "1:468022157295:web:ef684473950fa30f0f601a"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+const db = firebase.firestore();
+
+</script>
+<script src="script.js"></script>
+</body>
+</html>

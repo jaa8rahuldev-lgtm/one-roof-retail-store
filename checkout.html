@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1 style="text-align:center;">Checkout</h1>
+
+<div style="max-width:400px;margin:auto;padding:20px;">
+
+<input id="name" type="text" placeholder="Full Name"><br><br>
+
+<input id="mobile" type="tel" placeholder="Mobile Number"><br><br>
+
+<textarea id="address" placeholder="Full Address"></textarea><br><br>
+
+<button onclick="placeOrder()">Place Order</button>
+
+</div>
+
+<script>
+function placeOrder(){
+
+let name=document.getElementById("name").value;
+let mobile=document.getElementById("mobile").value;
+let address=document.getElementById("address").value;
+
+if(name=="" || mobile=="" || address==""){
+alert("Please fill all details");
+return;
+}
+
+let cart=JSON.parse(localStorage.getItem("cart"))||[];
+
+let message="🛒 New Order%0A%0A";
+
+message+="Name: "+name+"%0A";
+message+="Mobile: "+mobile+"%0A";
+message+="Address: "+address+"%0A%0A";
+
+cart.forEach(item=>{
+message+=item.name+" - ₹"+item.price+"%0A";
+});
+let orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+orders.push({
+    id: Date.now(),
+    name: name,
+    mobile: mobile,
+    address: address,
+    items: cart,
+    status: "Pending",
+    date: new Date().toLocaleString()
+});
+
+localStorage.setItem("orders", JSON.stringify(orders));
+window.location.href = "https://wa.me/917465868068?text=" + encodeURIComponent(message);
+
+localStorage.removeItem("cart");
+
+
+
+window.location.href="index.html";
+
+}
+</script>
+
+</body>
+</html>

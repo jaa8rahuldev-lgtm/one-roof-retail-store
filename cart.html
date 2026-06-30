@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopping Cart</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  
+
+<h1 style="text-align:center;">🛒 Shopping Cart</h1>
+
+<div id="cart-items"></div>
+<h2>Total ₹<span id="total">0</span></h2>
+
+<div style="text-align:center;">
+<button onclick="checkout()">Checkout</button>
+</div>
+
+
+<div id="cart-items"></div>
+
+
+</body>
+<script>
+let cart=JSON.parse(localStorage.getItem("cart"))||[];
+
+let html="";
+let total=0;
+
+cart.forEach((item,index)=>{
+
+html+=`
+<div style="padding:15px;border-bottom:1px solid #ddd;">
+<h3>${item.name}</h3>
+<p>₹${item.price}</p>
+<button onclick="window.location.href='checkout.html'">
+Checkout
+</button>
+</div>
+`;
+
+total+=item.price;
+
+});
+
+document.getElementById("cart-items").innerHTML=html;
+
+document.getElementById("total").innerText=total;
+
+function removeItem(index){
+
+cart.splice(index,1);
+
+localStorage.setItem("cart",JSON.stringify(cart));
+
+location.reload();
+
+}
+</script>
+</html>
+<script>
+   // पूरा JavaScript
+</script>
+
+</body>
+</html>
